@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mentalist</title>
+<meta name="description" content="Привычки, фокус и аура. Соревнуйся с друзьями и кланами.">
+<meta name="theme-color" content="#0b0c10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mentalist">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="field" id="field" aria-hidden="true"><div class="wall" id="wall"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="dim" id="dim"></div></div>
+
+<main class="app"><div id="app"></div></main>
+
+<button class="tpill glass strong press" id="tpill" hidden></button>
+<button class="island" id="island" aria-label="Открыть таймер"></button>
+<video class="pipv" id="pipv" muted playsinline aria-hidden="true"></video>
+
+<nav class="dock" id="dock" hidden>
+  <div class="tabs glass lit" id="tabs" role="tablist">
+    <div class="ind" id="ind"></div>
+    <button class="tab on" data-tab="today" role="tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16 9.5"/></svg><span>Сегодня</span></button>
+    <button class="tab" data-tab="calendar" role="tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Календарь</span></button>
+    <button class="tab" data-tab="focus" role="tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V10M10 3h4M18.5 6.5l1.3-1.3"/></svg><span>Фокус</span></button>
+    <button class="tab" data-tab="stats" role="tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V13M12 20V5M19 20v-9"/></svg><span>Итоги</span></button>
+    <button class="tab" data-tab="top" role="tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg><span>Топ</span></button>
+  </div>
+</nav>
+
+<div class="scrim" id="scrim"></div>
+<section class="sheet glass strong" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"></section>
+<div class="toast glass strong" id="toast" role="status"></div>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
